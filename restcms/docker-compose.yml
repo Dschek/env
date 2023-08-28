@@ -6,9 +6,6 @@ services:
     image: "docker.pkg.github.com/dschek/restcms/restcms:latest"
     ports:
       - "8080:8080"
-    networks:
-      - local
-      - mongodb
     environment:
       - DBPORT=$DBPORT
       - DBHOST=$DBHOST
@@ -17,6 +14,9 @@ services:
       - DBPASSWORD=$DBPASSWORD
       - PORT=$PORT
 networks:
+  mongodb:
+    name: mongodb
+    external: true
   default:
     external:           
       name: local        
