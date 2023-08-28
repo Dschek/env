@@ -9,6 +9,13 @@ services:
     networks:
       - restb
       - mongodb
+    environment:
+      - DBPORT=$DBPORT
+      - DBHOST=$DBHOST
+      - DBNAME=$DBNAME
+      - DBUSERNAME=$DBUSERNAME
+      - DBPASSWORD=$DBPASSWORD
+      - PORT=$PORT
 networks:
   restb: {}
   mongodb:
