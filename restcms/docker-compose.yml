@@ -17,8 +17,8 @@ services:
       - DBPASSWORD=$DBPASSWORD
       - PORT=$PORT
 networks:
+  mongodb:
+    external: true
   default:
     external:           
       name: local
-  mongodb:
-    external: true
