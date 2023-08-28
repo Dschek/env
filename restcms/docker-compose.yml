@@ -18,8 +18,8 @@ services:
       - PORT=$PORT
 networks:
   mongodb:
-    name: mongodb
-    external: true
+    external:
+      name: mongodb
   default:
     external:           
       name: local
