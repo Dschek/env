@@ -6,3 +6,6 @@ services:
     image: "docker.pkg.github.com/dschek/restfrontreact/restfrontreact:latest"
     ports:
       - "9001:80"
+networks:
+  local:
+    external: true  

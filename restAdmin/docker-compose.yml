@@ -6,3 +6,6 @@ services:
     image: "docker.pkg.github.com/dschek/restadminreact/restadminreact:latest"
     ports:
       - "9002:80"
+networks:
+  local:
+    external: true  
