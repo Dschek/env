@@ -7,5 +7,6 @@ services:
     ports:
       - "9001:80"
 networks:
-  local:
-    external: true  
+  default:
+    local:
+      external: true  
