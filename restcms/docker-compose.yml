@@ -8,8 +8,8 @@ services:
       - "8080:8080"
     networks:
       - restb
-      - mongodb
+      - mysql
 networks:
   restb: {}
-  mongodb:
+  mysql:
     external: true
