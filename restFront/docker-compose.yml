@@ -8,5 +8,5 @@ services:
       - "9001:80"
 networks:
   default:
-    local:
-      external: true  
+    external:           
+      name: local
