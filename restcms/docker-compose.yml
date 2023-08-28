@@ -20,6 +20,6 @@ networks:
   network1:
     name: mongodb
     external: true
-  default:          
-    name: local
-    external: true
+  default:
+    external:          
+      name: local
