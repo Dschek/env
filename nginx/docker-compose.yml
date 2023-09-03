@@ -10,6 +10,7 @@ services:
     networks:
       - local
       - nginx    
+    restart: always
 networks:
   nginx:
     name: nginx
