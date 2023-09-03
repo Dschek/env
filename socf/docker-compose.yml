@@ -1,0 +1,10 @@
+services:
+  web:
+    container_name: socf
+    image: "docker.pkg.github.com/dschek/socfront/socfront:latest"
+    ports:
+      - "9101:80"
+networks:
+  default:
+    external:           
+      name: local
