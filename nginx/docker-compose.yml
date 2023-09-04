@@ -23,7 +23,7 @@ services:
       - ./certbot/conf/:/etc/letsencrypt/:rw
     depends_on:
       - web
-    command: certonly --agree-tos --no-eff-email --force-renewal -d restcms.ru -d www.restcms.ru -d tydi.ru -d www.tydi.ru
+    command: certonly --agree-tos --no-eff-email --force-renewal -d tydi.ru -d www.tydi.ru
     
 networks:
   nginx:
