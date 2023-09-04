@@ -12,18 +12,16 @@ services:
       - nginx    
     restart: always
     volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/:ro
       - ./certbot/www:/var/www/certbot/:ro
       - ./certbot/conf/:/etc/nginx/ssl/:ro
   certbot:
     image: certbot/certbot:latest
     volumes:
-      - ./nginx/conf/:/etc/nginx/conf.d/:rw
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
     depends_on:
       - web
-    # command: certonly --agree-tos --no-eff-email --force-renewal -d tydi.ru -d www.tydi.ru
+    command: certonly --agree-tos --no-eff-email --force-renewal -d tydi.ru -d www.tydi.ru -d restcms.ru -d www.restcms.ru
     
 networks:
   nginx:
