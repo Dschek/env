@@ -5,15 +5,15 @@ services:
     container_name: nginx
     image: "docker.pkg.github.com/dschek/nginx/nginx:latest"
     ports:
-      # - "80:80"
-      # - "443:443"
+      - "80:80"
+      - "443:443"
     networks:
-       - local
-    #  - nginx    
-  #  restart: always
+      - local
+      - nginx    
+    restart: always
 networks:
-#  nginx:
- #   name: nginx
+  nginx:
+    name: nginx
   local:        
     name: local   
     external: true       
