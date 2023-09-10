@@ -12,8 +12,6 @@ services:
       - nginx    
     restart: always
     volumes:
-      - web-root:/var/www/html
-      - ./nginx-conf:/etc/nginx/conf.d
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
   certbot:
@@ -21,7 +19,6 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
     depends_on:
       - web
     command: certonly --agree-tos --no-eff-email --force-renewal -d tydi.ru -d www.tydi.ru -d restcms.ru -d www.restcms.ru
