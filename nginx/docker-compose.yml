@@ -13,15 +13,15 @@ services:
     restart: always
     volumes:
       # - web-root:/var/www/html
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
+      - /certbot-etc:/etc/letsencrypt
+      - /certbot-var:/var/lib/letsencrypt
     # depends_on:
     #   - certbot
   certbot:
     image: certbot/certbot:latest
     volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
+      - /certbot-etc:/etc/letsencrypt
+      - /certbot-var:/var/lib/letsencrypt
       # - web-root:/var/www/html
     depends_on:
       - web
