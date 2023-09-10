@@ -14,13 +14,15 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - certbot
   certbot:
     image: certbot/certbot:latest
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
-    depends_on:
-      - web
+    # depends_on:
+    #   - web
     command: certonly --agree-tos --no-eff-email --force-renewal -d tydi.ru -d www.tydi.ru -d restcms.ru -d www.restcms.ru
     
 networks:
