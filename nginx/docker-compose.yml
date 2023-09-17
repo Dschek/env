@@ -15,7 +15,6 @@ services:
       - web-root:/var/www/html:ro
       - certbot-etc:/etc/letsencrypt:ro
       - certbot-var:/var/lib/letsencrypt:ro
-      - dhparam:/etc/ssl/certs/dhparam
     #   - ./certbot/www:/var/www/certbot/:ro
     #   - ./certbot/conf/:/etc/nginx/ssl/:ro
     # # depends_on:
@@ -26,17 +25,16 @@ services:
       - certbot-etc:/etc/letsencrypt:rw
       - certbot-var:/var/lib/letsencrypt:rw
       - web-root:/var/www/html:rw
-      - dhparam:/etc/ssl/certs/dhparam
     depends_on:
       - web
     command: >
-      openssl dhparam -out /etc/ssl/certs/dhparam-2048.pem 2048 
+      certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --staging -d tydi.ru  -d www.tydi.ru &&
+      certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --staging -d restcms.ru -d www.restcms.ru
 
 volumes:
   certbot-etc:
   certbot-var:
   web-root:
-  dhparam:
 networks:
   nginx:
     name: nginx
