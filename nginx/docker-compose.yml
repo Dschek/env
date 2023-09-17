@@ -30,7 +30,7 @@ services:
     depends_on:
       - web
     command: >
-      openssl dhparam -out /etc/ssl/certs/dhparam/dhparam-2048.pem 2048 
+      openssl dhparam -out /etc/ssl/certs/dhparam-2048.pem 2048 
 
 volumes:
   certbot-etc:
