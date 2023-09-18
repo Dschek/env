@@ -15,10 +15,6 @@ services:
       - web-root:/var/www/html:ro
       - certbot-etc:/etc/letsencrypt:ro
       - certbot-var:/var/lib/letsencrypt:ro
-    #   - ./certbot/www:/var/www/certbot/:ro
-    #   - ./certbot/conf/:/etc/nginx/ssl/:ro
-    # # depends_on:
-    #   - certbot
   certbot:
     image: certbot/certbot:latest
     volumes:
