@@ -29,8 +29,6 @@ services:
       - web
     command: >
        certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --force-renewal -d tydi.ru -d www.tydi.ru 
-       # &&
-       # certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --force-renewal -d restcms.ru -d www.restcms.ru
 
 volumes:
   certbot-etc:
