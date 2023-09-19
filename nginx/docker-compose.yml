@@ -15,16 +15,16 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - web-root:/usr/share/nginx/html
-  # certbot:
-  #   image: certbot/certbot:latest
-  #   volumes:
-  #     - certbot-etc:/etc/letsencrypt
-  #     - certbot-var:/var/lib/letsencrypt
-  #     - web-root:/var/www/html
-  #   depends_on:
-  #     - web
-  #   command: >
-  #      certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --staging -d restcms.ru -d www.restcms.ru 
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+      - web-root:/var/www/html
+    depends_on:
+      - web
+    command: >
+       certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --staging -d restcms.ru -d www.restcms.ru 
 volumes:
   certbot-etc:
   certbot-var:
