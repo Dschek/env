@@ -14,7 +14,7 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt:ro
       - certbot-var:/var/lib/letsencrypt:ro
-      - web-root:/var/www/html:ro
+      - web-root:/usr/share/nginx/html:ro
   certbot:
     image: certbot/certbot:latest
     volumes:
