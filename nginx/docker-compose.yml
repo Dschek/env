@@ -12,9 +12,9 @@ services:
       - nginx    
     restart: always
     volumes:
-      - web-root:/var/www/html:ro
       - certbot-etc:/etc/letsencrypt:ro
       - certbot-var:/var/lib/letsencrypt:ro
+      - web-root:/var/www/html:ro
   certbot:
     image: certbot/certbot:latest
     volumes:
