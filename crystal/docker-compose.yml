@@ -2,7 +2,7 @@ version: '3'
 
 services:
   web:
-    image: "docker.pkg.github.com/dschek/crystal/crystal:latest"
+    image: "ghcr.io/dschek/crystal/crystal:latest"
     container_name: crystal
     ports:
       - "9201:3001"
