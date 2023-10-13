@@ -16,7 +16,7 @@ services:
       - certbot-var:/var/lib/letsencrypt
       - web-root:/usr/share/nginx/html
   certbot:
-    image: "docker.pkg.github.com/dschek/certboot/certboot:latest"
+    image: "ghcr.io/dschek/certboot/certboot:latest"
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
