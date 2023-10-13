@@ -15,14 +15,12 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - web-root:/usr/share/nginx/html
-      - shfile:/usr/share/nginx
   certbot:
     image: ghcr.io/dschek/certboot/certboot:latest
     volumes:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - web-root:/var/www/html
-      - shfile:/var/www
     depends_on:
       - web
 # staging
@@ -30,7 +28,6 @@ volumes:
   certbot-etc:
   certbot-var:
   web-root:
-  shfile:
 networks:
   nginx:
     name: nginx
