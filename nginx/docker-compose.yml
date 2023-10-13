@@ -23,28 +23,7 @@ services:
       - web-root:/var/www/html
     depends_on:
       - web
-    command: >
-      certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --force-renewal -d crystalapp.ru -d www.crystalapp.ru 
-  certbot2:
-    image: certbot/certbot:latest
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - certbot1
-    command: >
-      certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --force-renewal -d restcms.ru -d www.restcms.ru
-  certbot3:
-    image: certbot/certbot:latest
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - certbot2
-    command: >
-      certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --force-renewal -d tydi.ru -d www.tydi.ru
+    command: ./certbootStart.sh
 # staging
 volumes:
   certbot-etc:
