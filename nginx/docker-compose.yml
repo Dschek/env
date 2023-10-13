@@ -15,7 +15,7 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - web-root:/usr/share/nginx/html
-  certbot:
+  certbot1:
     image: certbot/certbot:latest
     volumes:
       - certbot-etc:/etc/letsencrypt
@@ -25,7 +25,7 @@ services:
       - web
     command: >
       certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --force-renewal -d crystalapp.ru -d www.crystalapp.ru 
-  certbot:
+  certbot2:
     image: certbot/certbot:latest
     volumes:
       - certbot-etc:/etc/letsencrypt
@@ -35,7 +35,7 @@ services:
       - web
     command: >
       certonly --webroot --webroot-path=/var/www/html --email fggnb45598@gmail.com --agree-tos --no-eff-email --force-renewal -d restcms.ru -d www.restcms.ru
-  certbot:
+  certbot3:
     image: certbot/certbot:latest
     volumes:
       - certbot-etc:/etc/letsencrypt
