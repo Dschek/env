@@ -16,7 +16,7 @@ services:
       - certbot-var:/var/lib/letsencrypt
       - web-root:/usr/share/nginx/html
       - shfile:/usr/share/nginx
-  certbot1:
+  certbot:
     image: certbot/certbot:latest
     volumes:
       - certbot-etc:/etc/letsencrypt
@@ -25,8 +25,7 @@ services:
       - shfile:/var/www
     depends_on:
       - web
-    command: bin/sh -c "ls var/www/"
-    # /var/www/certbootStart.sh"
+    command: bin/sh -c "/var/www/certbootStart.sh"
 # staging
 volumes:
   certbot-etc:
