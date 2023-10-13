@@ -23,7 +23,7 @@ services:
       - web-root:/var/www/html
     depends_on:
       - web
-    command: .certbootStart.sh
+    command: bin/sh -c ".certbootStart.sh"
 # staging
 volumes:
   certbot-etc:
