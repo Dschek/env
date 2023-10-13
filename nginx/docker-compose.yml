@@ -25,7 +25,7 @@ services:
       - shfile:/var/www
     depends_on:
       - web
-    command: ls /var
+    command: ls
     # bin/sh -c "/var/www/certbootStart.sh"
 # staging
 volumes:
