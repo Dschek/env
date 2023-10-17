@@ -11,24 +11,24 @@ services:
       - local
       - nginx    
     restart: always
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/usr/share/nginx/html
-  certbot:
-    image: "ghcr.io/dschek/certboot/certboot:latest"
-    # image: certbot/certbot:latest
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - web
-# staging
-volumes:
-  certbot-etc:
-  certbot-var:
-  web-root:
+    # volumes:
+    #   - certbot-etc:/etc/letsencrypt
+    #   - certbot-var:/var/lib/letsencrypt
+    #   - web-root:/usr/share/nginx/html
+#   certbot:
+#     image: "ghcr.io/dschek/certboot/certboot:latest"
+#     # image: certbot/certbot:latest
+#     volumes:
+#       - certbot-etc:/etc/letsencrypt
+#       - certbot-var:/var/lib/letsencrypt
+#       - web-root:/var/www/html
+#     depends_on:
+#       - web
+# # staging
+# volumes:
+#   certbot-etc:
+#   certbot-var:
+#   web-root:
 networks:
   nginx:
     name: nginx
