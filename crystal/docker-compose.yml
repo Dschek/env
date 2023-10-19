@@ -9,9 +9,13 @@ services:
     networks:
       - local
       - mongodb
+      - email
 networks:
   mongodb:
     name: mongodb
+    external: true
+  email:
+    name: email
     external: true
   local:        
     name: local   
