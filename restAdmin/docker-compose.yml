@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     container_name: resta
-    image: "docker.pkg.github.com/dschek/restadminreact/restadminreact:latest"
+    image: "docker.pkg.github.com/dschek/resta/resta:latest"
     ports:
       - "9002:80"
 networks:
