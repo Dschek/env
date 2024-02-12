@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     container_name: nginx
-    image: "docker.pkg.github.com/dschek/nginx/nginx:latest"
+    image: "registry.gitlab.com/fggnb45598/nginx:latest"
     ports:
       - "81:81"
       - "82:82"
