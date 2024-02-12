@@ -3,7 +3,7 @@ version: '3'
 services:
   web:
     container_name: restf
-    image: "registry.gitlab.com/fggnb45598/restfront:latest"
+    image: "docker.pkg.github.com/dschek/rest/front:latest"
     ports:
       - "9001:80"
 networks:
