@@ -1,7 +1,7 @@
 services:
   web:
     container_name: socf
-    image: "docker.pkg.github.com/dschek/socfront/socfront:latest"
+    image: "registry.gitlab.com/fggnb45598/tydi:latest"
     ports:
       - "9101:80"
 networks:
