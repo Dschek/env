@@ -17,7 +17,7 @@ services:
 #      - DBPASSWORD=$DBPASSWORD
 #      - PORT=$PORT
 networks:
-  mysql:
+  postgres:
     name: postgres
     external: true
   local:
