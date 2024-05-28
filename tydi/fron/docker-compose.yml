@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: socf
+    container_name: tydif
     image: "registry.gitlab.com/fggnb45598/tydi:latest"
     ports:
       - "9101:80"
