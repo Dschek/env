@@ -19,7 +19,7 @@ services:
 networks:
   local:
     name: local
-    external: true
+#    external: true
   postgres:
     name: postgres
-#    external: true
+    external: true
