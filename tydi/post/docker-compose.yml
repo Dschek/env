@@ -18,8 +18,9 @@ services:
 #      - PORT=$PORT
 networks:
   local:
-    internal: true
+    external: true
     name: local
+    attachable: true
   postgres:
     name: postgres
     external: true
