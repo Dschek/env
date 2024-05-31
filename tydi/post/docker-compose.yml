@@ -19,7 +19,6 @@ services:
 networks:
   postgres:
     name: postgres
-    external: true
   local:
     name: local
     external: true
