@@ -8,6 +8,7 @@ services:
       - "8081:8080"
     networks:
       - local
+      - postgres
 #    environment:
 #      - DBPORT=$DBPORT
 #      - DBHOST=$DBHOST
@@ -16,6 +17,9 @@ services:
 #      - DBPASSWORD=$DBPASSWORD
 #      - PORT=$PORT
 networks:
+  postgres:
+    name: postgres
+    external: true
   local:
     name: local
     external: true
