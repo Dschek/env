@@ -5,7 +5,7 @@ services:
     container_name: tydip
     image: "registry.gitlab.com/fggnb45598/post:latest"
     ports:
-      - "8081:8080"
+      - "80:8080"
     networks:
 #      - local
       - postgres
