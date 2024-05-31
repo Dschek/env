@@ -4,7 +4,3 @@ services:
     image: "registry.gitlab.com/fggnb45598/tydi:latest"
     ports:
       - "9101:80"
-# networks:
-#   default:
-#     external:           
-#       name: local
