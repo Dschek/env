@@ -2,10 +2,10 @@ version: '3'
 
 services:
   web:
-    image: "ghcr.io/dschek/crystal/crystal:latest"
+    image: "registry.gitlab.com/fggnb45598/crystal:latest"
     container_name: crystal
     ports:
-      - "9201:3001"
+      - "3001:3001"
     networks:
       - local
       - mongodb
