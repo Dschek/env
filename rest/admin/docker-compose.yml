@@ -6,7 +6,7 @@ services:
     image: "registry.gitlab.com/fggnb45598/restadmin:latest"
     ports:
       - "9002:80"
-# networks:
-#   default:
-#     external:           
-#       name: local
+networks:
+  default:
+    external:
+      name: local
