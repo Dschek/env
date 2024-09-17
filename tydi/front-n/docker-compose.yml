@@ -1,0 +1,10 @@
+services:
+  web:
+    container_name: tydif
+    image: "registry.gitlab.com/fggnb45598/tydi_next:latest"
+    ports:
+      - "9101:3000"
+networks:
+  default:
+    external:
+      name: local
