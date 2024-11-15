@@ -22,7 +22,7 @@ services:
       KC_DB_PASSWORD: $DB_PASSWORD
       KEYCLOAK_ADMIN: $USERNAME
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
-      KC_HOSTNAME: $HOSTNAME
+#      KC_HOSTNAME: $HOSTNAME
 #    healthcheck:
 #      test:
 #        - "CMD-SHELL"
