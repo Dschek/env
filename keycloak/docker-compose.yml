@@ -31,6 +31,3 @@ services:
 #      retries: 3
 #      start_period: 90s
     restart: unless-stopped
-    depends_on:
-      postgres:
-        condition: service_healthy
