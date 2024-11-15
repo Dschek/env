@@ -6,7 +6,7 @@ services:
     image: "mirror.gcr.io/keycloak/keycloak:20.0.2"
     command: start
     ports:
-      - "8080:8180"
+      - "8180:8080"
     networks:
       - local
       - postgres
