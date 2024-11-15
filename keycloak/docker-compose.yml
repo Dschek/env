@@ -5,6 +5,11 @@ services:
     container_name: keycloak
     image: "mirror.gcr.io/keycloak/keycloak:20.0.2"
     command: start
+    ports:
+      - "8080:8080"
+    networks:
+      - local
+      - postgres
     environment:
       KC_DB: postgres
       KC_DB_SCHEMA: public
@@ -31,3 +36,11 @@ services:
 #      retries: 3
 #      start_period: 90s
     restart: unless-stopped
+networks:
+  local:
+    external: true
+    name: local
+    attachable: true
+  postgres:
+    name: postgres
+    external: true
