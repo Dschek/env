@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   web:
-    container_name: restb
-    image: "mirror.gcr.io/keycloak/keycloak:latest"
+    container_name: keycloak
+    image: "mirror.gcr.io/keycloak/keycloak:20.0.2"
     command: start
     environment:
       KC_DB: postgres
