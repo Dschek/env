@@ -11,8 +11,6 @@ services:
       - local
       - postgres
     environment:
-      KC_DB: postgres
-      KC_DB_SCHEMA: public
 #      KC_HEALTH_ENABLED: 'true'
 #      KC_HTTP_ENABLED: 'true'
 #      KC_PROXY_HEADERS: 'xforwarded'
@@ -22,6 +20,8 @@ services:
       KC_DB_PASSWORD: $DB_PASSWORD
       KEYCLOAK_ADMIN: $USERNAME
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
+      KC_DB_SCHEMA: public
+      KC_FEATURES: preview
 #      KC_HOSTNAME: $HOSTNAME
 #    healthcheck:
 #      test:
