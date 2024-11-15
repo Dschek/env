@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: restb
+    image: "mirror.gcr.io/keycloak/keycloak:latest"
+    command: start
+    environment:
+      KC_DB: postgres
+      KC_DB_SCHEMA: public
+      KC_HEALTH_ENABLED: 'true'
+      KC_HTTP_ENABLED: 'true'
+      KC_PROXY_HEADERS: 'xforwarded'
+      PROXY_ADDRESS_FORWARDING: 'true'
+      KC_DB_URL_HOST: $DB_HOST
+      KC_DB_URL_DATABASE: $DB_NAME
+      KC_DB_USERNAME: $DB_USER
+      KC_DB_PASSWORD: $DB_PASSWORD
+      KEYCLOAK_ADMIN: $USERNAME
+      KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
+      KC_HOSTNAME: $HOSTNAME
+#    healthcheck:
+#      test:
+#        - "CMD-SHELL"
+#        - |
+#          exec 3<>/dev/tcp/localhost/9000 &&
+#          echo -e 'GET /health/ready HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n' >&3 &&
+#          cat <&3 | tee /tmp/healthcheck.log | grep -q '200 OK'
+#      interval: 10s
+#      timeout: 5s
+#      retries: 3
+#      start_period: 90s
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
