@@ -20,7 +20,7 @@ services:
       KC_PROXY: edge
       KC_HOSTNAME_PATH: auth
       KC_HOSTNAME_URL: $HOSTNAME
-      KC_DB_URL: $DB_URL
+      proxy: something
       KC_DB_USERNAME: $DB_USER
       KC_DB_PASSWORD: $DB_PASSWORD
       KEYCLOAK_ADMIN: $USERNAME
