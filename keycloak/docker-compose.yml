@@ -17,6 +17,9 @@ services:
       KC_HTTP_ENABLED: 'true'
       KC_PROXY_HEADERS: 'xforwarded'
       PROXY_ADDRESS_FORWARDING: 'true'
+      KC_PROXY: edge
+      KC_HOSTNAME_PATH: auth
+      KC_HOSTNAME_ADMIN: example.com
       KC_DB_URL: $DB_URL
       KC_DB_USERNAME: $DB_USER
       KC_DB_PASSWORD: $DB_PASSWORD
