@@ -17,16 +17,15 @@ services:
       KC_HTTP_ENABLED: 'true'
       KC_PROXY_HEADERS: 'xforwarded'
       PROXY_ADDRESS_FORWARDING: 'true'
-#      KC_PROXY: edge
-#      KC_HOSTNAME_PATH: auth
-#      KC_HOSTNAME_URL: 80
-      KC_HOSTNAME_ADMIN: $HOSTNAME
+      KC_PROXY: edge
+      KC_HOSTNAME_PATH: auth
+      KC_HOSTNAME_URL: $HOSTNAME
       KC_DB_URL: $DB_URL
       KC_DB_USERNAME: $DB_USER
       KC_DB_PASSWORD: $DB_PASSWORD
       KEYCLOAK_ADMIN: $USERNAME
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
-      KC_URL: $HOSTNAME
+      KC_HOSTNAME: $HOSTNAME
 #    healthcheck:
 #      test:
 #        - "CMD-SHELL"
