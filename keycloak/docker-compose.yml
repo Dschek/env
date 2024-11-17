@@ -23,7 +23,8 @@ services:
       KC_DB_PASSWORD: $DB_PASSWORD
       KEYCLOAK_ADMIN: $USERNAME
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
-#      KC_HOSTNAME: $HOSTNAME
+      KC_HOSTNAME: $HOSTNAME
+      KC_HOSTNAME_ADMIN: $ADMIN_URL
     restart: unless-stopped
 networks:
   local:
