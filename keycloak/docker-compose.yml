@@ -18,6 +18,7 @@ services:
       KC_PROXY_HEADERS: xforwarded
       KC_HOSTNAME_V2: true
       KC_PROXY_PROTOCOL_ENABLED: true
+      KC_HOSTNAME_BACKCHANNEL_DYNAMIC: true
       KC_DB_URL: $DB_URL
       KC_DB_USERNAME: $DB_USER
       KC_DB_PASSWORD: $DB_PASSWORD
