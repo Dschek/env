@@ -17,7 +17,7 @@ services:
 #      KC_HTTP_ENABLED: 'true'
       KC_PROXY_HEADERS: 'xforwarded'
       PROXY_ADDRESS_FORWARDING: 'true'
-      KC_PROXY_PROTOCOL_ENABLED: 'true'
+      PROXY_PORT_FORWARDING: 'true'
 #      KC_PROXY: edge
 #      proxy: something
       KC_DB_URL: $DB_URL
