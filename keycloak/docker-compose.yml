@@ -14,10 +14,11 @@ services:
       KC_DB: postgres
 #      KC_DB_SCHEMA: public
       KC_HEALTH_ENABLED: 'true'
-#      KC_HTTP_ENABLED: 'true'
+      KC_HTTP_ENABLED: 'true'
       KC_PROXY_HEADERS: 'xforwarded'
       PROXY_ADDRESS_FORWARDING: 'true'
-      PROXY_PORT_FORWARDING: 'true'
+#      PROXY_PORT_FORWARDING: 'true'
+      KC_PROXY_PROTOCOL_ENABLED: 'true'
 #      KC_PROXY: edge
 #      proxy: something
       KC_DB_URL: $DB_URL
