@@ -16,7 +16,7 @@ services:
       KC_HEALTH_ENABLED: 'true'
       KC_HTTP_ENABLED: 'true'
       KC_PROXY_HEADERS: 'xforwarded'
-      KC_PROXY: 'external'
+      KC_PROXY: external
       KC_HOSTNAME_V2: 'true'
       PROXY_ADDRESS_FORWARDING: 'true'
       KC_PROXY_PROTOCOL_ENABLED: 'true'
