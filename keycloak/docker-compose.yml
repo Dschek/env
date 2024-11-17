@@ -17,7 +17,6 @@ services:
       KC_HTTP_ENABLED: true
       KC_PROXY_HEADERS: xforwarded
       KC_HOSTNAME_V2: true
-      PROXY_ADDRESS_FORWARDING: true
       KC_PROXY_PROTOCOL_ENABLED: true
       KC_DB_URL: $DB_URL
       KC_DB_USERNAME: $DB_USER
