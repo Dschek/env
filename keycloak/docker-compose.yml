@@ -24,7 +24,7 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
       KC_HOSTNAME: $ADMIN_URL
 #      KC_HTTPS_PORT: 8180
-      KC_HTTP_ENABLED: false
+      KC_HTTP_ENABLED: true
     restart: unless-stopped
 networks:
   local:
