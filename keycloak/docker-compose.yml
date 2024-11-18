@@ -28,6 +28,7 @@ services:
       KC_TLS_HOSTNAME_VERIFIER: ANY
 #      KC_HTTPS_PORT: 8180
       KC_HTTP_ENABLED: true
+      KC_HOSTNAME_DEBUG: true
     restart: unless-stopped
 networks:
   local:
