@@ -6,7 +6,7 @@ services:
     image: "registry.gitlab.com/fggnb45598/keycloak:latest"
     command: start
     ports:
-      - "8433:8433"
+      - "8443:8443"
       - "8180:8080"
     networks:
       - local
