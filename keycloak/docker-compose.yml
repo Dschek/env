@@ -24,6 +24,7 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
       KC_HOSTNAME: $HOSTNAME
       KC_HOSTNAME_ADMIN: $ADMIN_URL
+      KC_TLS_HOSTNAME_VERIFIER: ANY
     restart: unless-stopped
 networks:
   local:
