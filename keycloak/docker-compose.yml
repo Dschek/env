@@ -23,7 +23,7 @@ services:
       KEYCLOAK_ADMIN: $USERNAME
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
       KC_HOSTNAME: $ADMIN_URL
-      KC_HTTPS_PORT: 433
+      KC_HTTPS_PORT: 8080
       KC_HTTP_ENABLED: true
     restart: unless-stopped
 networks:
