@@ -23,7 +23,7 @@ services:
       KEYCLOAK_ADMIN: $USERNAME
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
       KC_HOSTNAME: $ADMIN_URL
-      KC_HTTP_ENABLED: true
+      KC_HTTP_ENABLED: false
     restart: unless-stopped
 networks:
   local:
