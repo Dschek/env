@@ -24,6 +24,7 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
       KC_HOSTNAME: $ADMIN_URL
       KC_HTTP_ENABLED: false
+      KC_PROXY: edge
     restart: unless-stopped
 networks:
   local:
