@@ -26,6 +26,8 @@ services:
       KC_HOSTNAME_ADMIN: $ADMIN_URL
       KC_TLS_HOSTNAME_VERIFIER: ANY
       KC_HTTPS_PORT: 8180
+      KC_HTTP_ENABLED: true
+
     restart: unless-stopped
 networks:
   local:
