@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: tydip
+    image: "registry.gitlab.com/fggnb45598/post:latest"
+    ports:
+      - "8080:8080"
+    networks:
+      - local
+      - postgres
+#    environment:
+#      - DBPORT=$DBPORT
+#      - DBHOST=$DBHOST
+#      - DBNAME=$DBNAME
+#      - DBUSERNAME=$DBUSERNAME
+#      - DBPASSWORD=$DBPASSWORD
+#      - PORT=$PORT
+networks:
+  local:
+    external: true
+    name: local
+    attachable: true
+  postgres:
+    name: postgres
+    external: true
