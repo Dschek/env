@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: tydif
+    container_name: i2d
     image: "registry.gitlab.com/fggnb45598/i2d:latest"
     ports:
       - "9101:3000"
