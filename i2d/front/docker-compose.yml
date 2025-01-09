@@ -5,6 +5,7 @@ services:
     ports:
       - "9101:3000"
 networks:
-  default:
-    external:
-      name: local
+  local:
+    external: true
+    name: local
+    attachable: true
