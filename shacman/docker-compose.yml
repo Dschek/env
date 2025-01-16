@@ -4,7 +4,3 @@ services:
     image: "registry.gitlab.com/fggnb45598/shacman:latest"
     ports:
       - "9301:3000"
-networks:
-  default:
-    external:
-      name: local
