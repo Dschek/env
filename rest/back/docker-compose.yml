@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     container_name: restb
-    image: "docker.pkg.github.com/dschek/rest/back:latest"
+    image: "registry.gitlab.com/fggnb45598/restback:latest"
     ports:
       - "8080:8080"
     networks:
