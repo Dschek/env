@@ -2,13 +2,12 @@ version: '3.8'
 
 services:
   web:
-    container_name: post
-    image: "registry.gitlab.com/fggnb45598/post:latest"
+    container_name: auth
+    image: "registry.gitlab.com/i2dru/auth"
     ports:
       - "8080:8080"
     networks:
       - local
-      - postgres
 #    environment:
 #      - DBPORT=$DBPORT
 #      - DBHOST=$DBHOST
@@ -21,6 +20,3 @@ networks:
     external: true
     name: local
     attachable: true
-  postgres:
-    name: postgres
-    external: true
