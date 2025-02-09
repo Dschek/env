@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: mrcod_router
+    image: "registry.gitlab.com/mrcod/router"
+    ports:
+      - "8281:80"
+    networks:
+      - local
+      - mysql
+    environment:
+      - DBPORT=$DBPORT
+      - DBHOST=$DBHOST
+      - DBNAME=$DBNAME
+      - DBUSERNAME=$DBUSERNAME
+      - DBPASSWORD=$DBPASSWORD
+      - PORT=$PORT
+networks:
+  mysql:
+    name: mysql
+    external: true
+  local:
+    name: local
+    external: true

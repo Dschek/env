@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    container_name: front
+    image: "registry.gitlab.com/mrcod/front"
+    ports:
+      - "3301:3000"
+networks:
+  default:
+    external:
+      name: local
