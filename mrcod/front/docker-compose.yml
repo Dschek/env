@@ -4,7 +4,17 @@ services:
     image: "registry.gitlab.com/mrcod/front"
     ports:
       - "3301:3000"
+    networks:
+      - local
+#    environment:
+#      - DBPORT=$DBPORT
+#      - DBHOST=$DBHOST
+#      - DBNAME=$DBNAME
+#      - DBUSERNAME=$DBUSERNAME
+#      - DBPASSWORD=$DBPASSWORD
+#      - PORT=$PORT
 networks:
-  default:
-    external:
-      name: local
+  local:
+    external: true
+    name: local
+    attachable: true
