@@ -6,13 +6,16 @@ services:
       - "3301:3000"
     networks:
       - local
+      - mysql
     environment:
       - NEXTAUTH_URL=$NEXTAUTH_URL
       - NEXTAUTH_SECRET=$NEXTAUTH_SECRET
       - DB_URL=$DB_URL
       - TOKEN_KEY=$TOKEN_KEY
 networks:
-  local:
+  mysql:
+    name: mysql
     external: true
+  local:
     name: local
-    attachable: true
+    external: true
