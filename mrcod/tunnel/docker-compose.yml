@@ -8,16 +8,15 @@ services:
       - local
       - mysql
     environment:
-      - DBPORT=$DBPORT
-      - DBHOST=$DBHOST
-      - DBNAME=$DBNAME
-      - DBUSERNAME=$DBUSERNAME
-      - DBPASSWORD=$DBPASSWORD
       - PORT=$PORT
+      - BD_URL=$BD_URL
+      - BD_USERNAME=$BD_USERNAME
+      - BD_PASSWORD=$BD_PASSWORD
+      - SECRET_KEY=$SECRET_KEY
 networks:
   mysql:
     name: mysql
     external: true
-  local:        
-    name: local   
+  local:
+    name: local
     external: true     
