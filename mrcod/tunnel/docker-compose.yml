@@ -3,7 +3,7 @@ services:
     container_name: mrcod_tunnel
     image: "registry.gitlab.com/mrcod/tunnel"
     ports:
-      - "8380:80"
+      - "8380:8380"
     networks:
       - local
       - mysql
