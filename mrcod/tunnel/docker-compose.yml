@@ -4,6 +4,7 @@ services:
     image: "registry.gitlab.com/mrcod/tunnel"
     ports:
       - "8380:8380"
+      - "50000-60000:50000-60000"
     networks:
       - local
       - mysql
