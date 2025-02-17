@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: mrcod_tunnel
+    container_name: tunnel_mrcod
     image: "registry.gitlab.com/mrcod/tunnel"
     ports:
       - "8380:8380"
