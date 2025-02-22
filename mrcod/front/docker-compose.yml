@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: front_mrcod
+    container_name: front
     image: "registry.gitlab.com/mrcod/front:latest"
     ports:
       - "3301:3000"

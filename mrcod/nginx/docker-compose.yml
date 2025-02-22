@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: nginx_mrcod
+    container_name: nginx
     image: "registry.gitlab.com/mrcod/nginx"
     ports:
       - "80:80"

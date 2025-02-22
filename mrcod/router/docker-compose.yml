@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    container_name: mrcod_router
+    container_name: router
     image: "registry.gitlab.com/mrcod/router"
     ports:
       - "8281:80"
