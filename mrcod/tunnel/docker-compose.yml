@@ -5,6 +5,7 @@ services:
     ports:
       - "8380:8380"
       - "50000:50000"
+      - "60000:60000"
     networks:
       - local
       - mysql
