@@ -1,7 +1,7 @@
 services:
   web:
     container_name: tunnel
-    image: "registry.gitlab.com/mrcod/tunnel"
+    image: "registry.gitlab.com/mrcod/tunnel:latest"
     ports:
       - "8380:8380"
       - "50000:50000"
