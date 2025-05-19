@@ -3,7 +3,7 @@ services:
     container_name: nginx
     image: "registry.gitlab.com/i2dru/nginx:latest"
     ports:
-      - "80:80"
+      - "83:83"
     networks:
       - local
       - nginx    
