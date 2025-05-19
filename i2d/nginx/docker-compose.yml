@@ -1,1 +1,16 @@
-hh
+services:
+  web:
+    container_name: nginx
+    image: "registry.gitlab.com/i2dru/nginx:latest"
+    ports:
+      - "80:80"
+    networks:
+      - local
+      - nginx    
+    restart: always
+networks:
+  nginx:
+    name: nginx
+  local:
+    name: local
+    external: true
