@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     container_name: post
-    image: "registry.gitlab.com/i2d/user:latest"
+    image: "registry.gitlab.com/i2dru/user:latest"
     ports:
       - "8083:8083"
     networks:
