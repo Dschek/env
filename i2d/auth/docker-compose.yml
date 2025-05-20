@@ -5,7 +5,7 @@ services:
     container_name: auth
     image: "registry.gitlab.com/i2dru/auth"
     ports:
-      - "8080:8080"
+      - "8082:8082"
     networks:
       - local
     environment:

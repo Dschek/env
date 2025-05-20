@@ -3,9 +3,9 @@ version: '3.8'
 services:
   web:
     container_name: post
-    image: "registry.gitlab.com/fggnb45598/post:latest"
+    image: "registry.gitlab.com/i2d/user:latest"
     ports:
-      - "8081:8081"
+      - "8083:8083"
     networks:
       - local
       - postgres
