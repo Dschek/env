@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web:
+    container_name: page
+    image: "registry.gitlab.com/i2dru/page:latest"
+    ports:
+      - "8084:8084"
+    networks:
+      - local
+      - postgres
+#    environment:
+#      - DBPORT=$DBPORT
+#      - DBHOST=$DBHOST
+#      - DBNAME=$DBNAME
+#      - DBUSERNAME=$DBUSERNAME
+#      - DBPASSWORD=$DBPASSWORD
+#      - PORT=$PORT
+networks:
+  local:
+    external: true
+    name: local
+    attachable: true
+  postgres:
+    name: postgres
+    external: true
