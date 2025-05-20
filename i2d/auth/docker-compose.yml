@@ -8,6 +8,7 @@ services:
       - "8082:8082"
     networks:
       - local
+      - nginx
     environment:
       - KEYCLOAK_URL=$KEYCLOAK_URL
       - KEYCLOAK_OAUTH_URI=$KEYCLOAK_OAUTH_URI
