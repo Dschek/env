@@ -8,12 +8,14 @@ services:
       - "8082:8082"
     networks:
       - local
-      - nginx
+      - bridge
     environment:
       - KEYCLOAK_URL=$KEYCLOAK_URL
       - KEYCLOAK_OAUTH_URI=$KEYCLOAK_OAUTH_URI
 networks:
-  local:
+  bridge:
+    name: bridge
     external: true
+  local:
     name: local
-    attachable: true
+    external: true
