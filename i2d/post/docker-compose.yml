@@ -9,13 +9,13 @@ services:
     networks:
       - local
       - postgres
-#    environment:
-#      - DBPORT=$DBPORT
-#      - DBHOST=$DBHOST
-#      - DBNAME=$DBNAME
-#      - DBUSERNAME=$DBUSERNAME
-#      - DBPASSWORD=$DBPASSWORD
-#      - PORT=$PORT
+    environment:
+      - DBPORT=$DBPORT
+      - DBHOST=$DBHOST
+      - DBNAME=$DBNAME
+      - DBUSERNAME=$DBUSERNAME
+      - DBPASSWORD=$DBPASSWORD
+      - PORT=$PORT
 networks:
   local:
     external: true

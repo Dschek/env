@@ -8,13 +8,9 @@ services:
       - "8080:8080"
     networks:
       - local
-#    environment:
-#      - DBPORT=$DBPORT
-#      - DBHOST=$DBHOST
-#      - DBNAME=$DBNAME
-#      - DBUSERNAME=$DBUSERNAME
-#      - DBPASSWORD=$DBPASSWORD
-#      - PORT=$PORT
+    environment:
+      - KEYCLOAK_URL=KEYCLOAK_URL
+      - KEYCLOAK_OAUTH_URI=KEYCLOAK_OAUTH_URI
 networks:
   local:
     external: true
