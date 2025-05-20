@@ -8,14 +8,13 @@ services:
       - "8082:8082"
     networks:
       - local
-      - bridge
+      - auth-network
     environment:
       - KEYCLOAK_URL=$KEYCLOAK_URL
       - KEYCLOAK_OAUTH_URI=$KEYCLOAK_OAUTH_URI
 networks:
-  bridge:
-    name: bridge
-    external: true
+  auth-network:
+    driver: bridge
   local:
     name: local
     external: true
