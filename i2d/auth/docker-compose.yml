@@ -9,8 +9,8 @@ services:
     networks:
       - local
     environment:
-      - KEYCLOAK_URL=KEYCLOAK_URL
-      - KEYCLOAK_OAUTH_URI=KEYCLOAK_OAUTH_URI
+      - KEYCLOAK_URL=$KEYCLOAK_URL
+      - KEYCLOAK_OAUTH_URI=$KEYCLOAK_OAUTH_URI
 networks:
   local:
     external: true
