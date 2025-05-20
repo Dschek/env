@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    container_name: post
+    container_name: user
     image: "registry.gitlab.com/i2dru/user:latest"
     ports:
       - "8083:8083"
