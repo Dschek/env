@@ -1,9 +1,7 @@
 services:
   web:
     container_name: front
-    image: "registry.gitlab.com/fggnb45598/i2d:latest"
-    ports:
-      - "9101:3000"
+    image: "registry.gitlab.com/i2dru/front:latest"
     environment:
       - NEXTAUTH_URL=$NEXTAUTH_URL
       - NEXTAUTH_SECRET=$NEXTAUTH_SECRET

@@ -4,8 +4,6 @@ services:
   web:
     container_name: subscribe
     image: "registry.gitlab.com/i2dru/subscribe:latest"
-    ports:
-      - "8085:8085"
     networks:
       - local
       - postgres
