@@ -14,5 +14,6 @@ networks:
   auth-network:
     driver: bridge
   local:
-    name: local
     external: true
+    name: local
+    attachable: true

@@ -2,10 +2,13 @@ services:
   web:
     container_name: front
     image: "registry.gitlab.com/i2dru/front:latest"
+    networks:
+      - local
     environment:
       - NEXTAUTH_URL=$NEXTAUTH_URL
       - NEXTAUTH_SECRET=$NEXTAUTH_SECRET
 networks:
-  default:
-    external:
-      name: local
+  local:
+    external: true
+    name: local
+    attachable: true
