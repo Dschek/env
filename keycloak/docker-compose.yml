@@ -3,7 +3,7 @@ version: '3.8'
 services:
   web:
     container_name: keycloak
-    image: "registry.gitlab.com/fggnb45598/keycloak:latest"
+    image: "quay.io/keycloak/keycloak"
     command: start
     ports:
       - "8443:8443"
