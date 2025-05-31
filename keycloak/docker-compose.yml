@@ -4,7 +4,7 @@ services:
   web:
     container_name: keycloak
     image: "registry.gitlab.com/fggnb45598/keycloak:latest"
-    command: start
+#    command: start
     ports:
       - "8443:8443"
       - "8080:8080"
