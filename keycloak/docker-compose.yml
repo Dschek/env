@@ -7,7 +7,7 @@ services:
     command: start
     ports:
       - "8443:8443"
-      - "8180:8080"
+      - "8080:8080"
     networks:
       - local
       - postgres
