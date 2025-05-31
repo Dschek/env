@@ -10,6 +10,7 @@ services:
     environment:
       - KEYCLOAK_URL=$KEYCLOAK_URL
       - KEYCLOAK_OAUTH_URI=$KEYCLOAK_OAUTH_URI
+      - KEYCLOAK_JWK_OAUTH_URI=$KEYCLOAK_JWK_OAUTH_URI
 networks:
   auth-network:
     driver: bridge
