@@ -23,9 +23,18 @@ services:
       KEYCLOAK_ADMIN: $USERNAME
       KEYCLOAK_ADMIN_PASSWORD: $PASSWORD
       KC_HOSTNAME: $ADMIN_URL
-      KC_HTTP_ENABLED: true
+      KC_HOSTNAME_STRICT_HTTPS: false
       KC_PROXY: none
-      KC_HTTPS_ENABLED: false
+      KC_HOSTNAME_STRICT: false
+    command: [
+      "/opt/keycloak/bin/kc.sh", "start", \
+      "--hostname-strict-https=false", \
+      "--hostname-strict=false", \
+      "--http-enabled=true", "--https-port=0", \
+      "--spi-x509cert-lookup-nginx-ssl-client-cert=SSL_CLIENT_CERT", \
+      "--spi-x509cert-lookup-nginx-ssl-cert-chain-prefix=CERT_CHAIN", \
+      "--spi-x509cert-lookup-nginx-certificate-chain-length=10"
+    ]
     restart: unless-stopped
 networks:
   local:
