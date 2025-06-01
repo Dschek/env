@@ -27,7 +27,7 @@ services:
       KC_PROXY: none
       KC_HOSTNAME_STRICT: false
     command: [
-      "/opt/keycloak/bin/kc.sh", "start", \
+      "start", \
       "--hostname-strict-https=false", \
       "--hostname-strict=false", \
       "--http-enabled=true", "--https-port=0", \
