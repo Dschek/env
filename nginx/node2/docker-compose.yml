@@ -1,7 +1,9 @@
+version: '3'
+
 services:
   web:
     container_name: nginx
-    image: "registry.gitlab.com/mrcod/nginx:latest"
+    image: "registry.gitlab.com/nginx6244905/node2:master"
     ports:
       - "80:80"
     networks:
@@ -11,6 +13,6 @@ services:
 networks:
   nginx:
     name: nginx
-  local:
-    name: local
-    external: true
+  local:        
+    name: local   
+    external: true       
