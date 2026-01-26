@@ -1,6 +1,6 @@
 services:
   web:
-    container_name: front
+    container_name: front-i2d
     image: "registry.gitlab.com/i2dru/front:latest"
     networks:
       - local
