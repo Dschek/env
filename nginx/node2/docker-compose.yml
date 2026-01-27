@@ -13,6 +13,7 @@ services:
 networks:
   nginx:
     name: nginx
+    external: true
   local:        
     name: local   
     external: true       
