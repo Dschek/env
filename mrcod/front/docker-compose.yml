@@ -2,9 +2,9 @@ services:
   web:
     container_name: front_mrcod
     image: "registry.gitlab.com/mrcod/front:latest"
-    network_mode: "host"
     networks:
       - local
+      - mysql
     environment:
       - NEXTAUTH_URL=$NEXTAUTH_URL
       - NEXTAUTH_SECRET=$NEXTAUTH_SECRET
@@ -17,6 +17,9 @@ services:
       - PAYMENTS_KEY=$PAYMENTS_KEY
       - DB_URL=$DB_URL
 networks:
+  mysql:
+    name: mysql
+    external: true
   local:
     name: local
     external: true
