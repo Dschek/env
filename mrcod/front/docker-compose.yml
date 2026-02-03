@@ -17,7 +17,7 @@ services:
       - PAYMENTS_KEY=$PAYMENTS_KEY
       - DB_URL=$DB_URL
 networks:
-  mysql:
+  db:
     name: db
     external: true
   local:
