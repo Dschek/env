@@ -1,0 +1,28 @@
+services:
+  back:
+    container_name: back_mrcod
+    image: "registry.gitlab.com/mrcod/back:latest"
+    networks:
+      - local
+      - db
+    environment:
+      - HTTP_ADDR=:8081
+      - DB_URL=$DB_URL
+      - SESSION_SECRET=$SESSION_SECRET
+      - SESSION_COOKIE_SECURE=true
+      - CORS_ALLOWED_ORIGINS=$CORS_ALLOWED_ORIGINS
+      - DEFAULT_TOKEN_DOMAIN_SUFFIX=$DEFAULT_TOKEN_DOMAIN_SUFFIX
+      - PAYMENTS_API_BASE_URL=$PAYMENTS_API_BASE_URL
+      - PAYMENTS_CHECKOUT_BASE_URL=$PAYMENTS_CHECKOUT_BASE_URL
+      - PAYMENTS_KEY=$PAYMENTS_KEY
+      - TARIFF_SYNC_TOKEN=$TARIFF_SYNC_TOKEN
+      - WORKER_TIMEOUT=12s
+      - BROKER_KEY_ID=$BROKER_KEY_ID
+      - BROKER_ED25519_PRIVATE_KEY_PEM=$BROKER_ED25519_PRIVATE_KEY_PEM
+networks:
+  db:
+    name: db
+    external: true
+  local:
+    name: local
+    external: true
