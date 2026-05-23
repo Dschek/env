@@ -4,22 +4,7 @@ services:
     image: "registry.gitlab.com/mrcod/front:latest"
     networks:
       - local
-      - db
-    environment:
-      - NEXTAUTH_URL=$NEXTAUTH_URL
-      - NEXTAUTH_SECRET=$NEXTAUTH_SECRET
-      - DB_HOST=$DB_HOST
-      - DB_PORT=$DB_PORT
-      - DB_PASSWORD=$DB_PASSWORD
-      - DB_USER=$DB_USER
-      - DB_NAME=$DB_NAME
-      - TOKEN_KEY=$TOKEN_KEY
-      - PAYMENTS_KEY=$PAYMENTS_KEY
-      - DB_URL=$DB_URL
 networks:
-  db:
-    name: db
-    external: true
   local:
     name: local
     external: true
