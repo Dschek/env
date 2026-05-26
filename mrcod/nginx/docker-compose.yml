@@ -6,11 +6,12 @@ services:
       - "80:80"
     networks:
       - local
-      - nginx    
+      - nginx
     restart: always
 networks:
   nginx:
     name: nginx
+    external: true
   local:
     name: local
     external: true
