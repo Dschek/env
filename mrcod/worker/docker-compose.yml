@@ -1,33 +1,46 @@
 services:
+  caddy:
+    build: .
+    restart: unless-stopped
+    environment:
+      CADDY_ADMIN_PORT: "${CADDY_ADMIN_PORT:-2019}"
+    ports:
+      - "${CADDY_HTTP_PORT:-80}:80"
+    expose:
+      - "${CADDY_ADMIN_PORT:-2019}"
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
+
   worker:
-    container_name: worker_mrcod
     image: "registry.gitlab.com/mrcod/worker:latest"
-    networks:
-      - local
+    restart: unless-stopped
+    depends_on:
+      - caddy
     environment:
       - HTTP_ADDR=:8080
       - SSH_BIND_HOST=0.0.0.0
-      - SSH_PUBLIC_HOST=$SSH_PUBLIC_HOST
+      - SSH_PUBLIC_HOST=${SSH_PUBLIC_HOST}
       - FORWARD_BIND_HOST=0.0.0.0
-      - FORWARD_PUBLIC_HOST=worker_mrcod
+      - FORWARD_PUBLIC_HOST=${FORWARD_PUBLIC_HOST:-worker}
       - REMOTE_FORWARD_BIND_ADDR=0.0.0.0
-      - CADDY_ADMIN_URL=http://caddy_mrcod:9000
+      - CADDY_ADMIN_HOST=caddy
+      - CADDY_ADMIN_PORT=${CADDY_ADMIN_PORT:-2019}
       - CADDY_SERVER_NAME=srv0
-      - ALLOWED_DOMAIN_SUFFIXES=$ALLOWED_DOMAIN_SUFFIXES
-      - SSH_PORT_RANGE_START=50000
-      - SSH_PORT_RANGE_END=50100
-      - FORWARD_PORT_RANGE_START=40000
-      - FORWARD_PORT_RANGE_END=40100
+      - ALLOWED_DOMAIN_SUFFIXES=${ALLOWED_DOMAIN_SUFFIXES}
+      - SSH_PORT_RANGE_START=${SSH_PORT_RANGE_START:-50000}
+      - SSH_PORT_RANGE_END=${SSH_PORT_RANGE_END:-50100}
+      - FORWARD_PORT_RANGE_START=${FORWARD_PORT_RANGE_START:-40000}
+      - FORWARD_PORT_RANGE_END=${FORWARD_PORT_RANGE_END:-40100}
       - CONNECT_TIMEOUT_SEC=60
       - SIGNING_KEYS_FILE=/app/config/keys.json
       - SSH_HOST_KEY_PATH=/app/config/ssh_host_key
       - LOG_LEVEL=info
     ports:
-      - "50000-50100:50000-50100"
+      - "${SSH_PORT_RANGE_START:-50000}-${SSH_PORT_RANGE_END:-50100}:${SSH_PORT_RANGE_START:-50000}-${SSH_PORT_RANGE_END:-50100}"
     volumes:
-      - ./worker/config:/app/config:ro
+      - ../worker/config:/app/config:ro
 
-networks:
-  local:
-    name: local
-    external: true
+volumes:
+  caddy_data:
+  caddy_config:
