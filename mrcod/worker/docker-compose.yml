@@ -22,10 +22,10 @@ services:
       - SSH_BIND_HOST=0.0.0.0
       - SSH_PUBLIC_HOST=${SSH_PUBLIC_HOST}
       - FORWARD_BIND_HOST=0.0.0.0
-      - FORWARD_PUBLIC_HOST=${FORWARD_PUBLIC_HOST:-worker}
+      - FORWARD_PUBLIC_HOST=worker
       - REMOTE_FORWARD_BIND_ADDR=0.0.0.0
       - CADDY_ADMIN_HOST=caddy
-      - CADDY_ADMIN_PORT=${CADDY_ADMIN_PORT:-2019}
+      - CADDY_ADMIN_PORT=9000
       - CADDY_SERVER_NAME=srv0
       - ALLOWED_DOMAIN_SUFFIXES=${ALLOWED_DOMAIN_SUFFIXES}
       - SSH_PORT_RANGE_START=${SSH_PORT_RANGE_START:-50000}
@@ -33,14 +33,15 @@ services:
       - FORWARD_PORT_RANGE_START=${FORWARD_PORT_RANGE_START:-40000}
       - FORWARD_PORT_RANGE_END=${FORWARD_PORT_RANGE_END:-40100}
       - CONNECT_TIMEOUT_SEC=60
-      - SIGNING_KEYS_FILE=/app/config/keys.json
-      - SSH_HOST_KEY_PATH=/app/config/ssh_host_key
+      - SIGNING_KEYS_JSON=${SIGNING_KEYS_JSON}
+      - SSH_HOST_KEY_PATH=/app/ssh/ssh_host_key
       - LOG_LEVEL=info
     ports:
       - "${SSH_PORT_RANGE_START:-50000}-${SSH_PORT_RANGE_END:-50100}:${SSH_PORT_RANGE_START:-50000}-${SSH_PORT_RANGE_END:-50100}"
     volumes:
-      - ../worker/config:/app/config:ro
+      - worker_ssh:/app/ssh
 
 volumes:
   caddy_data:
   caddy_config:
+  worker_ssh:
