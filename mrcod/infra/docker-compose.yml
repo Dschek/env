@@ -45,7 +45,7 @@ services:
 
       HOST_BOOTSTRAP_SSH_USER: "${HOST_BOOTSTRAP_SSH_USER:-root}"
       HOST_BOOTSTRAP_SSH_PORT: "${HOST_BOOTSTRAP_SSH_PORT:-22}"
-      HOST_BOOTSTRAP_SSH_PRIVATE_KEY_PATH: "/run/secrets/host_bootstrap_ssh_key"
+      HOST_BOOTSTRAP_SSH_PRIVATE_KEY_PATH: "/app/data/host_bootstrap_ssh_key"
       HOST_BOOTSTRAP_CONNECT_TIMEOUT: "${HOST_BOOTSTRAP_CONNECT_TIMEOUT:-2m}"
       HOST_BOOTSTRAP_COMMAND_TIMEOUT: "${HOST_BOOTSTRAP_COMMAND_TIMEOUT:-5m}"
       HOST_BOOTSTRAP_DEPLOY_DIR: "${HOST_BOOTSTRAP_DEPLOY_DIR:-/opt/mrcod}"
@@ -83,4 +83,7 @@ services:
       WORKER_BOOTSTRAP_SSH_HOST_KEY_PATH: "${WORKER_BOOTSTRAP_SSH_HOST_KEY_PATH:-/app/ssh/ssh_host_key}"
       WORKER_BOOTSTRAP_LOG_LEVEL: "${WORKER_BOOTSTRAP_LOG_LEVEL:-info}"
     volumes:
-      - ./secrets/host_bootstrap_ssh_key:/run/secrets/host_bootstrap_ssh_key:ro
+      - infra_data:/app/data
+
+volumes:
+  infra_data:
