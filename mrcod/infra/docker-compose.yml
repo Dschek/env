@@ -1,5 +1,6 @@
 services:
   infra:
+    container_name: infra
     image: "registry.gitlab.com/mrcod/infra:latest"
     restart: unless-stopped
     ports:

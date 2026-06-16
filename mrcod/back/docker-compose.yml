@@ -1,6 +1,6 @@
 services:
   back:
-    container_name: back_mrcod
+    container_name: back
     image: "registry.gitlab.com/mrcod/back:latest"
     networks:
       - local
