@@ -12,7 +12,7 @@ services:
       - SESSION_SECRET=$SESSION_SECRET
       - SESSION_COOKIE_SECURE=true
       - CORS_ALLOWED_ORIGINS=$CORS_ALLOWED_ORIGINS
-      - DEFAULT_TOKEN_DOMAIN_SUFFIX=mrcod.ru
+      - DEFAULT_TOKEN_DOMAIN_SUFFIX=mrcod1.ru
       - INTERNAL_DOMAIN_SUFFIX=domains.nozi.io
       - INFRA_API_BASE_URL=http://infra:8082
       - PAYMENTS_API_BASE_URL=https://api.payment-provider.com/api/v1
