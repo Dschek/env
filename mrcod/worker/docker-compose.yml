@@ -3,11 +3,14 @@ services:
     image: "registry.gitlab.com/mrcod/caddy:latest"
     restart: unless-stopped
     environment:
-      CADDY_ADMIN_PORT: "${CADDY_ADMIN_PORT:-2019}"
+      # БЫЛО 2019 по умолчанию — worker ждёт admin на 9000, иначе он висит
+      # на "waiting for caddy admin" и не поднимает свой :8080.
+      CADDY_ADMIN_PORT: "${CADDY_ADMIN_PORT:-9000}"
     ports:
       - "${CADDY_HTTP_PORT:-80}:80"
     expose:
-      - "${CADDY_ADMIN_PORT:-2019}"
+      # admin только внутри docker-сети, наружу НЕ публикуем
+      - "${CADDY_ADMIN_PORT:-9000}"
     volumes:
       - caddy_data:/data
       - caddy_config:/config
@@ -37,6 +40,9 @@ services:
       - SSH_HOST_KEY_PATH=/app/ssh/ssh_host_key
       - LOG_LEVEL=info
     ports:
+      # control-API для infra (публичный IP, без VPN) — ОБЯЗАТЕЛЬНО зафаерволить
+      # на IP infra. API подписан broker-ключом, но не шифрован (plain HTTP).
+      - "8080:8080"
       - "${SSH_PORT_RANGE_START:-50000}-${SSH_PORT_RANGE_END:-50100}:${SSH_PORT_RANGE_START:-50000}-${SSH_PORT_RANGE_END:-50100}"
     volumes:
       - worker_ssh:/app/ssh
