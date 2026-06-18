@@ -2,7 +2,7 @@ services:
   infra:
     container_name: infra
     image: "registry.gitlab.com/mrcod/infra:latest"
-    restart: unless-stopped
+    restart: always
     ports:
       - "${INFRA_HTTP_PORT:-8082}:8082"
     environment:
@@ -81,6 +81,16 @@ services:
       HOST_BOOTSTRAP_SSH_PRIVATE_KEY: $HOST_BOOTSTRAP_SSH_PRIVATE_KEY
     volumes:
       - infra_data:/app/data
+    networks:
+      - local
+      - nginx
 
 volumes:
   infra_data:
+networks:
+  nginx:
+    name: nginx
+    external: true
+  local:
+    name: local
+    external: true
